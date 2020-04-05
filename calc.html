@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Intro</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- {{ message }} -->
+    <div>1st number: <input type="text" v-model="firstNumber"></div>
+    <div>2nd number: <input type="text" v-model="secondNumber"></div>
+    <div>3rd number: <input type="text" v-model="thirdNumber"></div>
+    <div> <button v-on:click="Sum()">Sum</button>
+    <p> The result is: {{ result }} </p>
+  </div>
+  <input type ="text" v-model="message">
+  <!-- <script src="index.js"></script> -->
+</body>
+</html>
+
+<script>
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    // message: "Hello Vue!",
+    firstNumber: 0,
+    secondNumber: 0,
+    thirdNumber: 0,
+    result: null
+
+  },
+  methods: {
+    Sum: function() {
+    console.log('sum');
+    this.result = parseInt(this.firstNumber) + parseInt(this.secondNumber) + parseInt(this.thirdNumber)
+    
+  }
+  }
+});
+
+</script>
