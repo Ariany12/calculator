@@ -9,11 +9,18 @@
     <!-- {{ message }} -->
     <div>1st number: <input type="text" v-model="firstNumber"></div>
     <div>2nd number: <input type="text" v-model="secondNumber"></div>
-    <div>3rd number: <input type="text" v-model="thirdNumber"></div>
+    <!-- <div>3rd number: <input type="text" v-model="thirdNumber"></div> -->
+
     <div> <button v-on:click="Sum()">Sum</button>
-    <p> The result is: {{ result }} </p>
+    <p> The result is of sum: {{ result }} </p>
+    <div> <button v-on:click="Subt()">Subt</button>
+    <p> The result of subtraction  is: {{ result1 }} </p>
+    <div> <button v-on:click="Mult()">Mult</button>
+    <p> The result of multiplication  is: {{ result2 }} </p>
+    <div> <button v-on:click="Div()">div</button>
+    <p> The result of division  is: {{ result3 }} </p>
   </div>
-  <input type ="text" v-model="message">
+  <!-- <input type ="text" v-model="message"> -->
   <!-- <script src="index.js"></script> -->
 </body>
 </html>
@@ -27,15 +34,31 @@ var app = new Vue({
     firstNumber: 0,
     secondNumber: 0,
     thirdNumber: 0,
-    result: null
+    result: null,
+    result1: null,
+    result2: null,
+    result3: null,
+    
 
   },
   methods: {
     Sum: function() {
     console.log('sum');
-    this.result = parseInt(this.firstNumber) + parseInt(this.secondNumber) + parseInt(this.thirdNumber)
-    
+    this.result = parseInt(this.firstNumber) + parseInt(this.secondNumber) 
+  },
+    Subt: function() {
+    console.log('subt');
+    this.result1 = parseInt(this.firstNumber) - parseInt(this.secondNumber) 
+  },
+    Mult: function() {
+    console.log('mul');
+    this.result2 = parseInt(this.firstNumber) * parseInt(this.secondNumber) 
+  },
+    Div: function() {
+    console.log('div');
+    this.result3 = parseInt(this.firstNumber) / parseInt(this.secondNumber) 
   }
+
   }
 });
 
